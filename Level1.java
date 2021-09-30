@@ -31,7 +31,7 @@ public class Level1 extends World
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class, Door.class, HUD.class);
         Door door = new Door();
         addObject(door,1171,44);
-        Player player = new Player();
+        Player player = new Player(3,5.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
         addObject(player,43,760);
         addObject(new Floor(), 600, 800);
         addObject(new SmallBrickWall(), 250, 550);
