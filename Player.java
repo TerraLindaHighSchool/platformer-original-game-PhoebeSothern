@@ -147,7 +147,32 @@ public class Player extends Actor
 
     private void onCollision() 
     {
-
+        if(isTouching(Door.class))
+        {
+            World world = null;
+            try
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            } catch (InstantiationException e) {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e)
+            {
+                System.out.println("Cannot access class constructor");
+            }
+            Greenfoot.setWorld(world);
+        }
+        
+        if(isTouching(Obstacle.class))
+        {
+            removeTouching(Obstacle.class);
+        }
+        
+        // hit platform but not on ground
+        if(isTouching(Platform.class) && !isOnGround())
+        {
+            yVelocity = -1;
+            fall();
+        }
     } 
 
     private void mirrorImages() 
