@@ -10,7 +10,7 @@ public class Player extends Actor
 {
     private Health[] health;
     private Powerup[] powerup;
-    private int heathCount;
+    private int healthCount;
     private int speed;
     private int walkIndex;
     private int frame;
@@ -33,7 +33,10 @@ public class Player extends Actor
         GRAVITY = gravity;
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
-
+        
+        healthCount = 3;
+        health = new Health[healthCount];
+        
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
         { new GreenfootImage("walk0.png"),
@@ -58,7 +61,14 @@ public class Player extends Actor
         gameOver();
     }
 
-    public void addedToWorld(World world) {}
+    public void addedToWorld(World world) 
+    {
+       for(int i = 0; i < health.length; i++)
+        {
+             health[i] = new Health();
+             world.addObject(health[i], 30 + 42 * i, 36);
+        }
+    }
 
     private void walk()
     {
@@ -81,6 +91,10 @@ public class Player extends Actor
             isFacingLeft = false;
             isWalking = true;
             move(speed);
+            if(!MUSIC.isPlaying())
+            {
+                MUSIC.playLoop();
+            }
         }
 
         if(Greenfoot.isKeyDown("left"))
@@ -104,6 +118,7 @@ public class Player extends Actor
     {
         if(Greenfoot.isKeyDown("space") && isOnGround())
         {
+            Greenfoot.playSound("jump.wav");
             yVelocity = JUMP_FORCE;
             isJumping = true;
         }
@@ -150,6 +165,7 @@ public class Player extends Actor
         if(isTouching(Door.class))
         {
             World world = null;
+            Greenfoot.playSound("door_open.wav");
             try
             {
                 world = (World) NEXT_LEVEL.newInstance();
@@ -165,6 +181,9 @@ public class Player extends Actor
         if(isTouching(Obstacle.class))
         {
             removeTouching(Obstacle.class);
+            getWorld().removeObject(health[healthCount - 1]);
+            healthCount--;
+            Greenfoot.playSound("explosionSmall.wav");
         }
         
         // hit platform but not on ground
@@ -183,7 +202,13 @@ public class Player extends Actor
         }
     }
 
-    private void gameOver() {}
+    private void gameOver() 
+    {
+        if(healthCount == 0)
+        {
+            Greenfoot.setWorld(new Level1());
+        }
+    }
 
     private boolean isOnGround() 
     {
