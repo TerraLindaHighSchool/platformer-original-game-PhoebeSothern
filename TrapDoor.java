@@ -9,14 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TrapDoor extends Obstacle
 {
 
-    private float yVelocity;
-    private final float GRAVITY;
-    
-    public TrapDoor(float gravity)
-    {
-        GRAVITY = gravity;
-    }
-    
     public void act()
     {
         

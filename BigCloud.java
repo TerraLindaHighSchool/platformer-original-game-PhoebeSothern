@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SmallBrickWall here.
+ * Write a description of class BrickWall here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SmallBrickWall extends Platform
+public class BigCloud extends Platform
 {
     /**
-     * Act - do whatever the SmallBrickWall wants to do. This method is called whenever
+     * Act - do whatever the BrickWall wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

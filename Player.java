@@ -39,12 +39,12 @@ public class Player extends Actor
         
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
-        { new GreenfootImage("walk0.png"),
-            new GreenfootImage("walk1.png"),
-            new GreenfootImage("walk2.png"),
-            new GreenfootImage("walk3.png"),
-            new GreenfootImage("walk4.png"),
-            new GreenfootImage("walk5.png"),
+        { new GreenfootImage("grassbirdwalk0.png"),
+            new GreenfootImage("grassbirdwalk1.png"),
+            new GreenfootImage("grassbirdwalk2.png"),
+            new GreenfootImage("grassbirdwalk3.png"),
+            new GreenfootImage("grassbirdwalk4.png"),
+            new GreenfootImage("grassbirdwalk5.png"),
         };
     }
 

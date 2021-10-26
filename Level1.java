@@ -32,29 +32,54 @@ public class Level1 extends World
      */
     private void prepare()
     {
-        setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class, Door.class, HUD.class);
+        setPaintOrder(Player.class,Obstacle.class, Platform.class, Collectable.class, Door.class, HUD.class);
         Door door = new Door();
-        addObject(door,1171,44);
+        addObject(door,1140,44);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
         addObject(new Floor(), 600, 800);
-        addObject(new SmallBrickWall(), 250, 550);
-        addObject(new SmallBrickWall(), 150, 550);
-        addObject(new SmallBrickWall(), 450, 650);
-        addObject(new SmallBrickWall(), 550, 650);
-        addObject(new TrapDoor(GRAVITY), 650, 650);
-        addObject(new TrapDoor(GRAVITY), 400, 450);
-        addObject(new SmallBrickWall(), 100, 350);
-        addObject(new SmallBrickWall(), 300, 200);
-        addObject(new SmallBrickWall(), 420, 200);
-        addObject(new SmallBrickWall(), 800, 480);
-        addObject(new TrapDoor(GRAVITY), 900, 480);
-        addObject(new SmallBrickWall(), 1000, 480);
-        addObject(new BrickWall(), 1100,100);
-        addObject(new BrickWall(), 840,250);
-        addObject(new Bomb(GRAVITY), 115,507);
-        addObject(new Bomb(GRAVITY), 875,207);
-        addObject(new Bomb(GRAVITY), 555,607);
+        Bomb bomb = new Bomb();
+        addObject(bomb,928,610);
+        SmallCloud SmallCloud = new SmallCloud();
+        addObject(SmallCloud,820,680);
+        SmallCloud SmallCloud2 = new SmallCloud();
+        BigCloud BigCloud = new BigCloud();
+        addObject(BigCloud,925,667);
+        TrapDoor trapDoor = new TrapDoor();
+        addObject(trapDoor,1030,680);
+        addObject(SmallCloud2,90,533);
+        BigCloud BigCloud2 = new BigCloud();
+        addObject(BigCloud2,200,520);
+        BigCloud BigCloud3 = new BigCloud();
+        addObject(BigCloud3,310,520);
+        TrapDoor trapDoor2 = new TrapDoor();
+        addObject(trapDoor2,420,533);
+        TrapDoor trapDoor3 = new TrapDoor();
+        addObject(trapDoor3,275,620);
+        SmallCloud SmallCloud3 = new SmallCloud();
+        addObject(SmallCloud3,1015,465);
+        SmallCloud SmallCloud4 = new SmallCloud();
+        addObject(SmallCloud4,828,337);
+        BigCloud BigCloud4 = new BigCloud();
+        addObject(BigCloud4,724,323);
+        SmallCloud SmallCloud5 = new SmallCloud();
+        addObject(SmallCloud5,410,235);
+        SmallCloud SmallCloud6 = new SmallCloud();
+        addObject(SmallCloud6,310,235);
+        SmallCloud SmallCloud7 = new SmallCloud();
+        addObject(SmallCloud7,105,85);
+        SmallCloud SmallCloud8 = new SmallCloud();
+        addObject(SmallCloud8,550,120);
+        SmallCloud SmallCloud9 = new SmallCloud();
+        addObject(SmallCloud9,1147,110);
+        SmallCloud SmallCloud10 = new SmallCloud();
+        addObject(SmallCloud10,1045,110);
+        SmallCloud SmallCloud11 = new SmallCloud();
+        addObject(SmallCloud11,940,110);
+        Bomb bomb2 = new Bomb();
+        addObject(bomb2,310,461);
+        Bomb bomb3 = new Bomb();
+        addObject(bomb3,549,72);
     }
     
     private void spawn()

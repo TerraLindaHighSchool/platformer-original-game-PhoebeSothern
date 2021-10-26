@@ -9,13 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bomb extends Obstacle
 {
     private float yVelocity;
-    private final float GRAVITY;
-    
-    public Bomb(float gravity)
-    {
-        GRAVITY = gravity;
-    }
-    
+
     public void act()
     {
         
@@ -26,7 +20,6 @@ public class Bomb extends Obstacle
     {
         if(!isOnGround())
         {
-            yVelocity += GRAVITY;
             setLocation(getX(), getY() + (int) yVelocity);
         }
     }

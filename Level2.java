@@ -38,23 +38,6 @@ public class Level2 extends World
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
         addObject(new Floor(), 600, 800);
-        addObject(new SmallBrickWall(), 250, 550);
-        addObject(new SmallBrickWall(), 150, 550);
-        addObject(new SmallBrickWall(), 450, 650);
-        addObject(new SmallBrickWall(), 550, 650);
-        addObject(new TrapDoor(GRAVITY), 650, 650);
-        addObject(new TrapDoor(GRAVITY), 400, 450);
-        addObject(new SmallBrickWall(), 100, 350);
-        addObject(new SmallBrickWall(), 300, 200);
-        addObject(new SmallBrickWall(), 420, 200);
-        addObject(new SmallBrickWall(), 800, 480);
-        addObject(new TrapDoor(GRAVITY), 900, 480);
-        addObject(new SmallBrickWall(), 1000, 480);
-        addObject(new BrickWall(), 1100,100);
-        addObject(new BrickWall(), 840,250);
-        addObject(new Bomb(GRAVITY), 115,507);
-        addObject(new Bomb(GRAVITY), 875,207);
-        addObject(new Bomb(GRAVITY), 555,607);
     }
     
     private void spawn()
