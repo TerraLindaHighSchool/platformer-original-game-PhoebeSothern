@@ -6,20 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level2 extends World
+public class Level4 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
-    private final Class NEXT_LEVEL = Level3.class;
+    private final Class NEXT_LEVEL = WinSplash.class;
     /**
      * Constructor for objects of class BrickWorld.
      * 
      */
-    public Level2()
+    public Level4()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1, false); 
@@ -32,53 +32,52 @@ public class Level2 extends World
      */
     private void prepare()
     {
-        setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class, Door.class, HUD.class);
+        setPaintOrder(Player.class,Obstacle.class, Platform.class, Collectable.class, Door.class, HUD.class);
         Door door = new Door();
-        addObject(door,1171,44);
+        addObject(door,1140,44);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
         addObject(new Floor(), 600, 800);
         SmallCloud smallCloud = new SmallCloud();
-        addObject(smallCloud,199,678);
-        SmallCloud smallCloud2 = new SmallCloud();
-        addObject(smallCloud2,407,522);
-        SmallCloud smallCloud3 = new SmallCloud();
-        addObject(smallCloud3,792,680);
-        TrapDoor trapDoor = new TrapDoor();
-        addObject(trapDoor,676,680);
+        addObject(smallCloud,183,676);
         BigCloud bigCloud = new BigCloud();
-        addObject(bigCloud,908,667);
-        SmallCloud smallCloud4 = new SmallCloud();
-        addObject(smallCloud4,1021,680);
-        smallCloud4.setLocation(1018,680);
+        addObject(bigCloud,95,548);
         BigCloud bigCloud2 = new BigCloud();
-        addObject(bigCloud2,500,508);;
-        SmallCloud smallCloud5 = new SmallCloud();
-        addObject(smallCloud5,848,411);
-        TrapDoor trapDoor2 = new TrapDoor();
-        addObject(trapDoor2,1064,100);
-        SmallCloud smallCloud6 = new SmallCloud();
-        addObject(smallCloud6,1174,100);
-        SmallCloud smallCloud7 = new SmallCloud();
-        addObject(smallCloud7,956,100);
-        SmallCloud smallCloud8 = new SmallCloud();
-        addObject(smallCloud8,589,213);
+        addObject(bigCloud2,207,548);
+        SmallCloud smallCloud2 = new SmallCloud();
+        addObject(smallCloud2,318,562);
+        SmallCloud smallCloud3 = new SmallCloud();
+        addObject(smallCloud3,1,562);
+        SmallCloud smallCloud4 = new SmallCloud();
+        addObject(smallCloud4,553,645);
         BigCloud bigCloud3 = new BigCloud();
-        addObject(bigCloud3,478,200);
+        addObject(bigCloud3,667,632);
+        SmallCloud smallCloud5 = new SmallCloud();
+        addObject(smallCloud5,779,645);
+        SmallCloud smallCloud6 = new SmallCloud();
+        addObject(smallCloud6,1013,537);
+        SmallCloud smallCloud7 = new SmallCloud();
+        addObject(smallCloud7,705,428);
+        BigCloud bigCloud4 = new BigCloud();
+        addObject(bigCloud4,600,414);
+        SmallCloud smallCloud8 = new SmallCloud();
+        addObject(smallCloud8,394,281);
         SmallCloud smallCloud9 = new SmallCloud();
-        addObject(smallCloud9,364,213);
+        addObject(smallCloud9,278,281);
         SmallCloud smallCloud10 = new SmallCloud();
-        addObject(smallCloud10,249,213);
+        addObject(smallCloud10,652,147);
         SmallCloud smallCloud11 = new SmallCloud();
-        addObject(smallCloud11,88,352);
+        addObject(smallCloud11,1147,111);
         SmallCloud smallCloud12 = new SmallCloud();
-        addObject(smallCloud12,191,60);
+        addObject(smallCloud12,1032,111);
+        SmallCloud smallCloud13 = new SmallCloud();
+        addObject(smallCloud13,917,111);
+        SmallCloud smallCloud14 = new SmallCloud();
+        addObject(smallCloud14,158,88);
         Bomb bomb = new Bomb();
-        addObject(bomb,907,608);
+        addObject(bomb,669,576);
         Bomb bomb2 = new Bomb();
-        addObject(bomb2,88,305);
-        Bomb bomb3 = new Bomb();
-        addObject(bomb3,476,142);
+        addObject(bomb2,272,236);
     }
     
     private void spawn()
